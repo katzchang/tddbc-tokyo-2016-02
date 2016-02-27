@@ -3,11 +3,13 @@ package hello
 import org.scalatest.FreeSpec
 
 class GridPointsTest extends FreeSpec {
+  import GridPoint._
+
   "2 GridPoints" - {
     "contains" in {
       val target = GridPoints((4, 7), (3, 7))
-      assert(target.contains(GridPoint(4, 7)))
-      assert(!target.contains(GridPoint(4, 8)))
+      assert(target.contains((4, 7)))
+      assert(!target.contains((4, 8)))
     }
 
     "isConnected" in {
@@ -23,10 +25,10 @@ class GridPointsTest extends FreeSpec {
   "3 GridPoints" - {
     "contains" in {
       val target = GridPoints((4, 7), (3, 7), (3, 8))
-      assert(target.contains(GridPoint(4, 7)))
-      assert(target.contains(GridPoint(3, 7)))
-      assert(target.contains(GridPoint(3, 8)))
-      assert(!target.contains(GridPoint(4, 8)))
+      assert(target.contains((4, 7)))
+      assert(target.contains((3, 7)))
+      assert(target.contains((3, 8)))
+      assert(!target.contains((4, 8)))
     }
 
     "isConnected" in {

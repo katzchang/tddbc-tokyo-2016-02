@@ -3,8 +3,11 @@ package hello
 import org.scalatest.FreeSpec
 
 class GridPointTest extends FreeSpec {
+
+  import GridPoint._
+
   "GridPoint" - {
-    val target = GridPoint(4, 7)
+    val target = (4, 7)
     assert(target.x == 4)
     assert(target.y == 7)
     assert(target.notation == "(4,7)")

@@ -19,4 +19,5 @@ case class GridPoint(p: (Int, Int)) {
 
 object GridPoint {
   def apply(x: Int, y: Int): GridPoint = GridPoint((x, y))
+  implicit def toGridPoint(p: (Int, Int)): GridPoint = GridPoint(p)
 }
