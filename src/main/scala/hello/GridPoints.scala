@@ -7,4 +7,6 @@ case class GridPoints(private val points: GridPoint*) {
     }
 
   def contains(point: GridPoint) = points.contains(point)
+
+  def count = points.size
 }
