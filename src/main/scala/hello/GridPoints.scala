@@ -5,7 +5,7 @@ case class GridPoints(private val points: Set[(Int, Int)]) {
 
   def isConnected =
     points.forall { p =>
-      points.exists(p.isNeighborOf(_))
+      points.exists(p.isNeighborOf)
     }
 
   def contains(point: (Int, Int)) = points.contains(point)
