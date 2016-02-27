@@ -12,8 +12,8 @@ class GridPointTest extends FreeSpec {
 
   "grid point hasSameCoordinatesWith" in {
     val target = GridPoint(4, 7)
-    assert(target.hasSameCoordinatesWith(GridPoint(4, 7)) == true)
-    assert(target.hasSameCoordinatesWith(GridPoint(3, 8)) == false)
+    assert(target.hasSameCoordinatesWith(GridPoint(4, 7)))
+    assert(!target.hasSameCoordinatesWith(GridPoint(3, 8)))
   }
 
 }
