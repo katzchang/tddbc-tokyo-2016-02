@@ -1,8 +1,7 @@
 package hello
 
 case class GridPoint(p: (Int, Int)) {
-  val x = p._1
-  val y = p._2
+  val (x, y) = p
   val notation = p.toString
 
   def hasSameCoordinatesWith(that: GridPoint) = this == that
