@@ -15,13 +15,10 @@ case class GridPoints(private val points: Set[GridPoint]) {
     points.toList.map { p =>
       points.count(_.isNeighborOf(p))
     }.sorted match {
+      case 1 :: 1 :: Nil => true
       case 1 :: 1 :: rest if rest.forall(_ == 2) => true
       case _ => false
     }
-
-
-
-
   }
 }
 
