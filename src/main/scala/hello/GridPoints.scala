@@ -1,7 +1,7 @@
 package hello
 
 case class GridPoints(points: Set[GridPoint]) {
-  def isConnected = points..isNeighborOf(b)
+  def isConnected = points.fo.isNeighborOf(b)
 
   def contains(that: GridPoint) =
     that == a || that == b
