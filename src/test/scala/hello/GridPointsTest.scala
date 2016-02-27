@@ -43,6 +43,7 @@ class GridPointsTest extends FreeSpec {
   "N GridPoints" - {
     "traversable" in {
       assert(GridPoints((1,1), (1,2), (2,2), (2,3), (3,3), (3,2)).isTraversable)
+      assert(!GridPoints((1,1), (1,2), (2,2), (2,3), (3,3), (3,2), (4,3)).isTraversable)
     }
   }
 }
