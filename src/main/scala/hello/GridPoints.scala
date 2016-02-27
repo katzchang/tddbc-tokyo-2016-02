@@ -1,13 +1,14 @@
 package hello
 
-// TODO: ユニークじゃないときの振る舞い
-case class GridPoints(private val points: Set[GridPoint]) {
+case class GridPoints(private val points: Set[(Int, Int)]) {
+  import GridPoint._
+
   def isConnected =
     points.forall { p =>
-      points.exists(p.isNeighborOf)
+      points.exists(p.isNeighborOf(_))
     }
 
-  def contains(point: GridPoint) = points.contains(point)
+  def contains(point: (Int, Int)) = points.contains(point)
 
   def count = points.size
 
@@ -23,7 +24,7 @@ case class GridPoints(private val points: Set[GridPoint]) {
 }
 
 object GridPoints {
-  def apply(pairs: (Int, Int)*): GridPoints = {
-    GridPoints(pairs.map(GridPoint(_)).toSet)
-  }
+  // TODO: ユニークじゃないときの振る舞い
+  def apply(pairs: (Int, Int)*): GridPoints =
+    GridPoints(pairs.toSet)
 }
