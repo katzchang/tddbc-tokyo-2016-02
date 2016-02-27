@@ -26,9 +26,9 @@ class GridPointsTest extends FreeSpec {
     }
 
     "isConnected" in {
-      assert(GridPoints(GridPoint(4, 7), GridPoint(3, 7), GridPoint(3, 8)))
-      assert(GridPoints(GridPoint(4, 7), GridPoint(3, 7), GridPoint(5, 7)))
-      assert(!GridPoints(GridPoint(4, 7), GridPoint(3, 7), GridPoint(2, 8)))
+      assert(GridPoints(GridPoint(4, 7), GridPoint(3, 7), GridPoint(3, 8)).isConnected)
+      assert(GridPoints(GridPoint(4, 7), GridPoint(3, 7), GridPoint(5, 7)).isConnected)
+      assert(!GridPoints(GridPoint(4, 7), GridPoint(3, 7), GridPoint(2, 8)).isConnected)
     }
 
   }

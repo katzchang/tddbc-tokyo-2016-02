@@ -1,13 +1,15 @@
 package hello
 
-case class GridPoints(points: Set[GridPoint]) {
-  def isConnected = points.fo.isNeighborOf(b)
+case class GridPoints(private val points: GridPoint*) {
+  val set = points.toSet
 
-  def contains(that: GridPoint) =
-    that == a || that == b
-}
+  def isConnected = {
+    set.forall {
+      p =>
+        val rest = set - p
+        rest.exists(p.isNeighborOf)
+    }
+  }
 
-object GridPoints {
-  def apply(points: GridPoint*): GridPoints =
-    GridPoints(points.toSet)
+  def contains(point: GridPoint) = points.contains(point)
 }
