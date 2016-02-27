@@ -8,14 +8,6 @@ class GridPointTest extends FreeSpec {
 
   "GridPoint" - {
     val target = (4, 7)
-    assert(target.x == 4)
-    assert(target.y == 7)
-    assert(target.notation == "(4,7)")
-
-    "hasSameCoordinatesWith" in {
-      assert(target.hasSameCoordinatesWith((4, 7)))
-      assert(!target.hasSameCoordinatesWith((3, 8)))
-    }
 
     "isNeighborOf" in {
       assert(target.isNeighborOf((3, 7)))
