@@ -14,10 +14,9 @@ case class GridPoints(private val points: Set[GridPoint]) {
   def isTraversable = {
     points.toList.map { p =>
       points.count(_.isNeighborOf(p)) % 2
-    }.sorted.reverse match {
-      case 1 :: 1 :: Nil => true
-      case 1 :: 1 :: rest if rest.forall(_ == 0) => true
-      case l if l.forall(_ == 0) => true
+    }.count(_ == 1) match {
+      case 2 => true
+      case 0 => true
       case _ => false
     }
   }
