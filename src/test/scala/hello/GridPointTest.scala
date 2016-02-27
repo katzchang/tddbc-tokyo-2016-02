@@ -10,3 +10,7 @@ class GridPointTest extends FreeSpec {
     assert(target.notation == "(4,7)")
   }
 }
+
+case class GridPoint(x: Int, y: Int) {
+  val notation = (x, y).toString
+}
