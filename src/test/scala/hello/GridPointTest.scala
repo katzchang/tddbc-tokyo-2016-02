@@ -13,14 +13,14 @@ class GridPointTest extends FreeSpec {
     assert(target.notation == "(4,7)")
 
     "hasSameCoordinatesWith" in {
-      assert(target.hasSameCoordinatesWith(GridPoint(4, 7)))
-      assert(!target.hasSameCoordinatesWith(GridPoint(3, 8)))
+      assert(target.hasSameCoordinatesWith((4, 7)))
+      assert(!target.hasSameCoordinatesWith((3, 8)))
     }
 
     "isNeighborOf" in {
-      assert(target.isNeighborOf(GridPoint(3, 7)))
-      assert(!target.isNeighborOf(GridPoint(3, 8)))
-      assert(!target.isNeighborOf(GridPoint(4, 7)))
+      assert(target.isNeighborOf((3, 7)))
+      assert(!target.isNeighborOf((3, 8)))
+      assert(!target.isNeighborOf((4, 7)))
     }
   }
 }
