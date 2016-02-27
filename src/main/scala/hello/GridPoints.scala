@@ -1,13 +1,10 @@
 package hello
 
 case class GridPoints(private val points: GridPoint*) {
-  val set = points.toSet
-
   def isConnected = {
-    set.forall {
+    points.forall {
       p =>
-        val rest = set - p
-        rest.exists(p.isNeighborOf)
+        points.exists(p.isNeighborOf)
     }
   }
 
